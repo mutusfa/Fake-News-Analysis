@@ -1,0 +1,17 @@
+black-nb
+fasttext
+fastai
+ipykernel
+ipywidgets
+lightgbm
+matplotlib
+numpy<1.22
+pandas
+Pillow<8.4.0
+scikit-learn
+scipy<1.7
+seaborn
+spacy
+tqdm
+transformers
+wordcloud
