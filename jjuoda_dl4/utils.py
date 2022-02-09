@@ -1,7 +1,9 @@
+import joblib
 from pathlib import Path
 from typing import Tuple
 
 import pandas as pd
+import numpy as np
 from tqdm.notebook import tqdm
 
 BASE_DATA_DIR = Path(__file__).parent.parent / "data"
@@ -24,11 +26,18 @@ def _make_dataframe(
     Returns:
         pd.DataFrame: Dataframe with article text as "text" column
     """
+
+    def read_file(path: Path) -> str:
+        with open(path, "r", encoding="utf-8") as f:
+            return f.read()
+
     articles_df = articles_df.copy()
-    for index, article in tqdm(articles_df.iterrows(), total=articles_df.shape[0]):
-        with open(root_dir / article.path, "r") as f:
-            text = f.read().replace("\n", " ")
-        articles_df.loc[index, "text"] = text
+
+    text_list = joblib.Parallel(n_jobs=-1)(
+        joblib.delayed(read_file)(root_dir / path)
+        for path in tqdm(articles_df.path, total=articles_df.shape[0])
+    )
+    articles_df["text"] = np.array(text_list)
     return articles_df
 
 
