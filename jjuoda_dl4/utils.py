@@ -37,7 +37,7 @@ def _make_dataframe(
         joblib.delayed(read_file)(root_dir / path)
         for path in tqdm(articles_df.path, total=articles_df.shape[0])
     )
-    articles_df["text"] = np.array(text_list)
+    articles_df["text"] = np.array(text_list, dtype=object)
     return articles_df
 
 
