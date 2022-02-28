@@ -6,8 +6,10 @@ import pandas as pd
 import numpy as np
 from tqdm.notebook import tqdm
 
-BASE_DATA_DIR = Path(__file__).parent.parent / "data"
-BASE_MODEL_DIR = Path(__file__).parent.parent / "models"
+PROJECT_DIR = Path(__file__).parent.parent
+BASE_DATA_DIR = PROJECT_DIR / "data"
+BASE_MODEL_DIR = PROJECT_DIR / "models"
+BASE_FIGURES_DIR = PROJECT_DIR / "figures"
 
 
 def _make_dataframe(
