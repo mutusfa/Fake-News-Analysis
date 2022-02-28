@@ -190,7 +190,6 @@ Doesn't seem as horrible as performance on validation split. Still models traine
 
 #### Gradient boosted trees ([lightgbm](https://github.com/microsoft/LightGBM) implementation)
 
-<<accuracy>>
 Gradient boosted trees are my best performing models. They achieved 0.863 auc on nela validation split and 0.833 auc on original dataset even though they were trained only on nela dataset. Also their predictions on data I excluded from training (cause I wasn't sure of my source scoring algorithm robustness) look reasonable:
 
 ![LGB predictions on unseen Nela](figures/modelling/fake-articles-by-source-score-lgbm.png)
