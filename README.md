@@ -28,7 +28,7 @@ This my capstone for Turing College deep learning course. I'm trying to build a 
     - [Deep learning models](#deep-learning-models)
       - [AutoNLP from Huggingface](#autonlp-from-huggingface)
       - [DistilBERT](#distilbert)
-  - [Conlusion](#conlusion)
+  - [Conclusion](#conclusion)
 
 ## What is fake news?
 
@@ -155,6 +155,8 @@ We'll see if models can generalize to this dataset.
 
 As you can see, no model performs well on Fake News Content Detection dataset, with its very short pieces of text and no titles. These models can distinguish articles.
 
+Important note: linear model was trained on Fake News Content Detection dataset, other models didn't see that data at all. While it's score is on validation split, better evaluation on its generalization is its (appalling) performance on nela dataset.
+
 A small note: accuracy on nela is optimistic - I selected model thresholds to maximize acuracy on nela's validation split, so there is some data leakage.
 
 Best performing model - across all datasets! - is DistillBERT by AutoNLP, specifically `mutusfa/autonlp-Fake_News_Analysis-528914959`.
@@ -217,7 +219,7 @@ It's also interesting that best performing models were custom distilberts - mode
 I wanted to get a baseline distilBERT model before trying to train Longformers. I ended up running out of time and didn't have time to train Longformers.
 My best DistilBERT is worse than AutoNLP ones and generalize to new datasets worse than gradient boosted trees I trained earlier. Still, results are defendable.
 
-## Conlusion
+## Conclusion
 
 Largest advances came from adding more data (via nela 2018), using more complex model (logistic regression to lightgbm boosted trees to DistillBERT) and cleaning the data.
 
