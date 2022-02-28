@@ -31,7 +31,11 @@ Each article has the following features:
 * date of scraping
 * label (labelled as True news or Fake news)
 
-Given subjects don't overlap between labels.
+Given subjects don't overlap between labels and I decided to not try to use them - in the wild it's unlikely I'll get neat "this is what this article is talking about" feature.
+
+Most of the articles are between 100 and 1000 words long. There is a spike of fake news articles with the only word "VIDEO" or "IMAGE" in the text, I'll scrub those out.
+![Histograam of number of words in article's body](figures/eda/num_words_body_histplot.png)
+
 
 #### Dataset generalization
 
