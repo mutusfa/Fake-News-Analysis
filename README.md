@@ -4,7 +4,31 @@ This my capstone for Turing College deep learning course. I'm trying to build a 
 
 ## Table of contents
 
-<<<To be added>>>
+- [Fake News Classification](#fake-news-classification)
+  - [Table of contents](#table-of-contents)
+  - [What is fake news?](#what-is-fake-news)
+  - [Data description](#data-description)
+    - [Fake and real news dataset](#fake-and-real-news-dataset)
+      - [Dataset generalization](#dataset-generalization)
+    - [NELA GT 2018 dataset](#nela-gt-2018-dataset)
+      - [Problems with labels](#problems-with-labels)
+      - [Problems with text](#problems-with-text)
+      - [Dataset generalization](#dataset-generalization-1)
+      - [Splits](#splits)
+    - [Fake News Content Detection dataset](#fake-news-content-detection-dataset)
+      - [Labels distribution](#labels-distribution)
+      - [Dataset generalization](#dataset-generalization-2)
+  - [Modeling](#modeling)
+    - [Comparing all models](#comparing-all-models)
+    - [Human performance](#human-performance)
+    - [Classical models](#classical-models)
+      - [Linear models](#linear-models)
+      - [Gradient boosted trees (lightgbm implementation)](#gradient-boosted-trees-lightgbm-implementation)
+      - [K nearest neighbors](#k-nearest-neighbors)
+    - [Deep learning models](#deep-learning-models)
+      - [AutoNLP from Huggingface](#autonlp-from-huggingface)
+      - [DistilBERT](#distilbert)
+  - [Conlusion](#conlusion)
 
 ## What is fake news?
 
